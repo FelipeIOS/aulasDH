@@ -14,9 +14,10 @@ class CalculadoraView: UIView {
     @IBOutlet weak var pesoTextField: UITextField!
     @IBOutlet weak var alturaTextField: UITextField!
     
-    func setupView() {
+    func setupView(color: UIColor) {
         self.alturaTextField.placeholder = "Altura"
         self.pesoTextField.placeholder = "Peso"
+        self.backgroundColor = color
         
     }
     
