@@ -14,14 +14,11 @@ class CalculadoraVC: BaseViewController {
     @IBOutlet weak var calcView: CalculadoraView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var calcButton: UIButton!
-     @IBOutlet weak var alturaTextField: UITextField!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-         
-        
-//        self.calcView.setupView()
-//        self.setupView()
-        // Do any additional setup after loading the view.
+
     }
 
     @IBAction func clicouCalcularButton(_ sender: UIButton) {
@@ -44,14 +41,18 @@ class CalculadoraVC: BaseViewController {
 }
 
 extension CalculadoraVC: CalculadoraViewProtocol {
+    
+    func calcIMC() {
+        self.clicouCalcularButton(self.calcButton)
+    }
+    
     func failureCalcIMC(msg: String) {
         self.resultadoLabel.text = msg
     }
     
-    
     func successCalcIMC(value: String) {
-      
         self.resultadoLabel.text = value
     }
+
 }
 
