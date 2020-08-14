@@ -181,9 +181,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="name1G1Label" destination="q01-48-sug" id="cMj-td-L9Z"/>
-                        <outlet property="name1G2Label" destination="iDK-Bz-1Wy" id="I0C-JV-qrE"/>
-                        <outlet property="name1G3Label" destination="MY9-DJ-4Ws" id="V3F-yH-PBq"/>
+                        <outlet property="name1g1Label" destination="q01-48-sug" id="ulk-oD-1pW"/>
+                        <outlet property="name1g2Label" destination="iDK-Bz-1Wy" id="Ba2-tN-XyH"/>
+                        <outlet property="name1g3Label" destination="MY9-DJ-4Ws" id="zsx-lJ-Sip"/>
                         <outlet property="name2g1Label" destination="4ua-ue-knJ" id="yTW-Is-TYR"/>
                         <outlet property="name2g2Label" destination="BKY-8x-Mq5" id="OQS-iq-Dgb"/>
                         <outlet property="name2g3Label" destination="9Yf-eB-RC1" id="qxh-VZ-oIz"/>
