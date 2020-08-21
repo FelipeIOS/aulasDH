@@ -14,63 +14,92 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYp-au-aW5">
+                                <rect key="frame" x="20" y="112" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PYp-au-aW5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BvW-AA-kdx"/>
+                            <constraint firstItem="PYp-au-aW5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="GrW-EW-YQI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PYp-au-aW5" secondAttribute="trailing" constant="20" id="fmt-Ww-Zrg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="SuperList" id="Fec-lc-GfU">
                         <barButtonItem key="backBarButtonItem" title=" " id="ASv-cM-Dti"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bRn-rd-cXv">
                             <color key="tintColor" red="0.97647720579999997" green="0.9764588475" blue="0.97647124529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="cliccouAddButton:" destination="BYZ-38-t0r" id="usu-fc-tbz"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Tfi-qD-dzT" kind="show" id="f6C-1L-SrD"/>
+                        <outlet property="produtoLabel" destination="PYp-au-aW5" id="fmm-uD-N4u"/>
+                        <segue destination="Tfi-qD-dzT" kind="show" identifier="addViewController" id="f6C-1L-SrD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941" y="138"/>
+            <point key="canvasLocation" x="766.66666666666674" y="137.94642857142856"/>
         </scene>
-        <!-- -->
+        <!--Produto-->
         <scene sceneID="199-Db-9Ad">
             <objects>
-                <viewController id="Tfi-qD-dzT" sceneMemberID="viewController">
+                <viewController id="Tfi-qD-dzT" customClass="AddViewController" customModule="SuperList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eOb-Nb-Tbl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qye-5X-uZX">
-                                <rect key="frame" x="20" y="141" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dm0-Eo-7QT">
-                                <rect key="frame" x="20" y="216" width="374" height="50"/>
-                                <color key="backgroundColor" red="0.17035922410000001" green="0.51562440399999998" blue="0.97263544800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="jSo-JM-PaS"/>
-                                </constraints>
-                                <state key="normal" title="Cadastrar">
-                                    <color key="titleColor" red="0.97647720579999997" green="0.9764588475" blue="0.97647124529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="csW-c8-9q2">
+                                <rect key="frame" x="20" y="141" width="374" height="152"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="produto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qye-5X-uZX">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="preço" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sqJ-hm-RhZ">
+                                        <rect key="frame" x="0.0" y="61" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dm0-Eo-7QT">
+                                        <rect key="frame" x="0.0" y="122" width="374" height="30"/>
+                                        <color key="backgroundColor" red="0.17035922410000001" green="0.51562440399999998" blue="0.97263544800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Cadastrar">
+                                            <color key="titleColor" red="0.97647720579999997" green="0.9764588475" blue="0.97647124529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tappedCadastrarButton:" destination="Tfi-qD-dzT" eventType="touchUpInside" id="ky3-dY-5US"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="dm0-Eo-7QT" firstAttribute="top" secondItem="Qye-5X-uZX" secondAttribute="bottom" constant="41" id="8kN-bR-N0V"/>
-                            <constraint firstItem="Qye-5X-uZX" firstAttribute="leading" secondItem="nW9-kV-hdb" secondAttribute="leading" constant="20" id="Qts-iN-B1s"/>
-                            <constraint firstItem="nW9-kV-hdb" firstAttribute="trailing" secondItem="Qye-5X-uZX" secondAttribute="trailing" constant="20" id="fyK-ku-5vf"/>
-                            <constraint firstItem="dm0-Eo-7QT" firstAttribute="leading" secondItem="nW9-kV-hdb" secondAttribute="leading" constant="20" id="gKx-m5-F6Z"/>
-                            <constraint firstItem="nW9-kV-hdb" firstAttribute="trailing" secondItem="dm0-Eo-7QT" secondAttribute="trailing" constant="20" id="gg7-Tc-l32"/>
-                            <constraint firstItem="Qye-5X-uZX" firstAttribute="top" secondItem="nW9-kV-hdb" secondAttribute="top" constant="53" id="vrN-hz-cyk"/>
+                            <constraint firstItem="csW-c8-9q2" firstAttribute="top" secondItem="nW9-kV-hdb" secondAttribute="top" constant="53" id="0vc-pf-zt0"/>
+                            <constraint firstItem="csW-c8-9q2" firstAttribute="leading" secondItem="nW9-kV-hdb" secondAttribute="leading" constant="20" id="fRF-Wq-Hi3"/>
+                            <constraint firstItem="nW9-kV-hdb" firstAttribute="trailing" secondItem="csW-c8-9q2" secondAttribute="trailing" constant="20" id="qqM-gB-OAS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nW9-kV-hdb"/>
                     </view>
-                    <navigationItem key="navigationItem" title=" " id="Gdi-ns-cQn"/>
+                    <navigationItem key="navigationItem" title="Produto" id="Gdi-ns-cQn"/>
+                    <connections>
+                        <outlet property="cadastrarButton" destination="dm0-Eo-7QT" id="i0F-x5-w49"/>
+                        <outlet property="precoTextField" destination="sqJ-hm-RhZ" id="hI1-7O-nD2"/>
+                        <outlet property="produtoTextField" destination="Qye-5X-uZX" id="8IG-sC-XCT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p37-ZC-Rwd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1757.9710144927537" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1410" y="138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h8Y-mM-7cm">
