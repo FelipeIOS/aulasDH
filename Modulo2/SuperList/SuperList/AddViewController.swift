@@ -8,12 +8,6 @@
 
 import UIKit
 
-struct Produto {
-    
-    var nome: String
-    var preco: String
-}
-
 
 protocol AddViewControllerProtocol: class  {
     
@@ -45,7 +39,7 @@ class AddViewController: UIViewController {
         
         print("tappedCadastrarButton")
         
-        self.arrayProdutos.append(Produto(nome: self.produtoTextField.text ?? "", preco: self.precoTextField.text ?? ""))
+        self.arrayProdutos.append(Produto(nome: self.produtoTextField.text ?? "", preco: self.precoTextField.text ?? "", categoria: .limpeza))
         
   
         self.produtoTextField.text = nil
