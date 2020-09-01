@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     
     var arrayProdutos:[Produto] = [Produto(nome: "arroz", preco: "2.00", categoria: .alimento),Produto(nome: "feijao", preco: "5.00", categoria: .alimento),Produto(nome: "farinha", preco: "1.00", categoria: .alimento), Produto(nome: "Leite", preco: "2.50", categoria: .alimento),Produto(nome: "sabao", preco: "2.00", categoria: .limpeza),Produto(nome: "amaciante", preco: "5.00", categoria: .limpeza),Produto(nome: "candida", preco: "1.00", categoria: .limpeza), Produto(nome: "detergente", preco: "2.50", categoria: .limpeza)]
     
-//    var arrayProdutos:[String] = ["produtoA1","produtoA2","produtoA3","produtoA4","produtoA5"]
-//    var arrayProdutosLimpeza:[String] = ["produtoL1","produtoL2","produtoL3","produtoL4","produtoL5"]
+    //    var arrayProdutos:[String] = ["produtoA1","produtoA2","produtoA3","produtoA4","produtoA5"]
+    //    var arrayProdutosLimpeza:[String] = ["produtoL1","produtoL2","produtoL3","produtoL4","produtoL5"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,12 +81,26 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("Row \(indexPath.row) selected")
+        let cell:UITableViewCell? = (tableView.cellForRow(at: indexPath) ?? UITableViewCell()) as UITableViewCell
+
+        if cell?.accessoryType == .checkmark {
+            cell?.accessoryType = .none
+        }else{
+            cell?.accessoryType = .checkmark
+        }
+    }
+    
 }
 
 extension ViewController: AddViewControllerProtocol {
     
     func successAddProduto(array: [Produto]) {
         
+        self.arrayProdutos = array
+        self.listTableView.reloadData()
         
     }
 }

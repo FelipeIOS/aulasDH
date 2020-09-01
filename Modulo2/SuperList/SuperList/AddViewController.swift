@@ -23,6 +23,7 @@ class AddViewController: UIViewController {
     weak var delegate: AddViewControllerProtocol?
     
     private var arrayProdutos: [Produto] = []
+    private var categoriaSelected: Categoria = .limpeza
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +35,28 @@ class AddViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func tappedCategoriaButton(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            self.categoriaSelected = .alimento
+        }else{
+            self.categoriaSelected = .limpeza
+        }
+        
+        print(self.categoriaSelected)
+        print(sender.selectedSegmentIndex)
+    }
+    
     
     @IBAction func tappedCadastrarButton(_ sender: UIButton) {
         
         print("tappedCadastrarButton")
         
-        self.arrayProdutos.append(Produto(nome: self.produtoTextField.text ?? "", preco: self.precoTextField.text ?? "", categoria: .limpeza))
         
-  
+        
+        self.arrayProdutos.append(Produto(nome: self.produtoTextField.text ?? "", preco: self.precoTextField.text ?? "", categoria: self.categoriaSelected))
+    
+        
         self.produtoTextField.text = nil
         self.precoTextField.text = nil
         self.cadastrarButton.isEnabled = false

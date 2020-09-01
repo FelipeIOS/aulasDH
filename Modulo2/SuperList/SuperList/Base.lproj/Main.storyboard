@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="cell" textLabel="gbP-PB-bZy" detailTextLabel="fSI-HG-FlV" style="IBUITableViewCellStyleSubtitle" id="tAY-tj-Xh7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="cell" textLabel="gbP-PB-bZy" detailTextLabel="fSI-HG-FlV" style="IBUITableViewCellStyleSubtitle" id="tAY-tj-Xh7">
                                         <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tAY-tj-Xh7" id="c7k-RY-nGb">
@@ -82,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="csW-c8-9q2">
-                                <rect key="frame" x="20" y="141" width="374" height="152"/>
+                                <rect key="frame" x="20" y="141" width="374" height="210"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="produto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qye-5X-uZX">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -94,8 +94,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VW4-gN-j9T">
+                                        <rect key="frame" x="0.0" y="122" width="374" height="32"/>
+                                        <color key="backgroundColor" red="0.12505528329999999" green="0.48192697759999997" blue="0.94563812020000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <segments>
+                                            <segment title="Alimentos"/>
+                                            <segment title="Limpeza"/>
+                                        </segments>
+                                        <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="tappedCategoriaButton:" destination="Tfi-qD-dzT" eventType="valueChanged" id="we2-8T-5bj"/>
+                                        </connections>
+                                    </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dm0-Eo-7QT">
-                                        <rect key="frame" x="0.0" y="122" width="374" height="30"/>
+                                        <rect key="frame" x="0.0" y="180" width="374" height="30"/>
                                         <color key="backgroundColor" red="0.17035922410000001" green="0.51562440399999998" blue="0.97263544800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Cadastrar">
                                             <color key="titleColor" red="0.97647720579999997" green="0.9764588475" blue="0.97647124529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
