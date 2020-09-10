@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class CarrosCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var modeloLabel: UILabel!
@@ -22,12 +23,21 @@ class CarrosCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func setupCell(carro: Carro) {
+    func setupCellCarro(carro: Carro) {
         
         self.modeloLabel.text = carro.modelo
         self.anoLabel.text = carro.ano
         self.carroImageView.image = UIImage(named: carro.image ?? "")
  
     }
+    
+    
+       func setupCellMoto(moto: Moto) {
+           
+           self.modeloLabel.text = moto.modelo
+           self.anoLabel.text = moto.cilindradas
+           self.carroImageView.image = UIImage(named: moto.image ?? "")
+    
+       }
 
 }

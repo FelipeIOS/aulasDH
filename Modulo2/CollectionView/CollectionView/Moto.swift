@@ -1,17 +1,18 @@
 //
-//  Carro.swift
+//  Moto.swift
 //  CollectionView
 //
-//  Created by Felipe Miranda on 08/09/20.
+//  Created by Felipe Miranda on 10/09/20.
 //  Copyright © 2020 Digital House. All rights reserved.
 //
 
 import Foundation
 
-struct Carro {
+
+struct Moto {
     
     var modelo:String?
     var ano: String?
     var image: String?
-
+    var cilindradas: String?
 }

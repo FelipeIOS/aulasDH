@@ -16,6 +16,8 @@
 		B24BB7CE2508469E006E680C /* CarrosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24BB7CC2508469E006E680C /* CarrosCollectionViewCell.swift */; };
 		B24BB7CF2508469E006E680C /* CarrosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24BB7CD2508469E006E680C /* CarrosCollectionViewCell.xib */; };
 		B24BB7D125084CE5006E680C /* Carro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24BB7D025084CE5006E680C /* Carro.swift */; };
+		B2686F99250AEC170091C6E9 /* sectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2686F98250AEC170091C6E9 /* sectionHeader.swift */; };
+		B2686F9B250AEE420091C6E9 /* Moto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2686F9A250AEE420091C6E9 /* Moto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		B24BB7CC2508469E006E680C /* CarrosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrosCollectionViewCell.swift; sourceTree = "<group>"; };
 		B24BB7CD2508469E006E680C /* CarrosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarrosCollectionViewCell.xib; sourceTree = "<group>"; };
 		B24BB7D025084CE5006E680C /* Carro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carro.swift; sourceTree = "<group>"; };
+		B2686F98250AEC170091C6E9 /* sectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sectionHeader.swift; sourceTree = "<group>"; };
+		B2686F9A250AEE420091C6E9 /* Moto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +71,9 @@
 				B24BB7BC25083B67006E680C /* ViewController.swift */,
 				B24BB7BE25083B67006E680C /* Main.storyboard */,
 				B24BB7CC2508469E006E680C /* CarrosCollectionViewCell.swift */,
+				B2686F98250AEC170091C6E9 /* sectionHeader.swift */,
 				B24BB7D025084CE5006E680C /* Carro.swift */,
+				B2686F9A250AEE420091C6E9 /* Moto.swift */,
 				B24BB7CD2508469E006E680C /* CarrosCollectionViewCell.xib */,
 				B24BB7C125083B79006E680C /* Assets.xcassets */,
 				B24BB7C325083B79006E680C /* LaunchScreen.storyboard */,
@@ -148,8 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2686F9B250AEE420091C6E9 /* Moto.swift in Sources */,
 				B24BB7BD25083B67006E680C /* ViewController.swift in Sources */,
 				B24BB7B925083B67006E680C /* AppDelegate.swift in Sources */,
+				B2686F99250AEC170091C6E9 /* sectionHeader.swift in Sources */,
 				B24BB7CE2508469E006E680C /* CarrosCollectionViewCell.swift in Sources */,
 				B24BB7BB25083B67006E680C /* SceneDelegate.swift in Sources */,
 				B24BB7D125084CE5006E680C /* Carro.swift in Sources */,
