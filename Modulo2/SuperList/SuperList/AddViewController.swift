@@ -41,6 +41,7 @@ class AddViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
     @IBAction func tappedCategoriaButton(_ sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0 {
@@ -69,10 +70,26 @@ class AddViewController: UIViewController {
         
         self.produtosTableView.reloadData()
         
-        self.delegate?.successAddProduto(array: self.arrayProdutos)
+        let nc = NotificationCenter.default
+        nc.post(name: Notification.Name("cadastrouProduto"), object: self.arrayProdutos)
+        
+        
+//        self.delegate?.successAddProduto(array: self.arrayProdutos)
+      
     }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.arrayProdutos = []
+        self.produtosTableView.reloadData()
+        self.categoriaSegmented.selectedSegmentIndex =  -1 
+    }
+    
+  
 
 }
+
+
 
 extension AddViewController: UITextFieldDelegate {
     

@@ -14,16 +14,34 @@ class ViewController: UIViewController {
     
     var arrayProdutos:[Produto] = [Produto(nome: "arroz", preco: "2.00", categoria: .alimento),Produto(nome: "feijao", preco: "5.00", categoria: .alimento),Produto(nome: "farinha", preco: "1.00", categoria: .alimento), Produto(nome: "Leite", preco: "2.50", categoria: .alimento),Produto(nome: "sabao", preco: "2.00", categoria: .limpeza),Produto(nome: "amaciante", preco: "5.00", categoria: .limpeza),Produto(nome: "candida", preco: "1.00", categoria: .limpeza), Produto(nome: "detergente", preco: "2.50", categoria: .limpeza)]
     
-    //    var arrayProdutos:[String] = ["produtoA1","produtoA2","produtoA3","produtoA4","produtoA5"]
-    //    var arrayProdutosLimpeza:[String] = ["produtoL1","produtoL2","produtoL3","produtoL4","produtoL5"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.listTableView.delegate = self
         self.listTableView.dataSource = self
-        //        self.listTableView.separatorStyle = .none
-        // Do any additional setup after loading the view.
+        
+        
+        let addView: AddViewController?
+        addView = tabBarController?.viewControllers![1] as? AddViewController
+        addView?.delegate = self
+        
+      
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(updateList(_:)), name: Notification.Name("cadastrouProduto"), object: nil)
+
     }
+    
+    @objc func updateList (_ notification: Notification) {
+        
+        let array: [Produto]? = notification.object as? [Produto]
+        
+        print(array)
+        
+
+        self.arrayProdutos += array ?? []
+        self.listTableView.reloadData()
+    }
+    
+
     
     @IBAction func cliccouAddButton(_ sender: UIBarButtonItem) {
         
