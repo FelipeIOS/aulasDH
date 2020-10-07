@@ -24,9 +24,19 @@ class ListaCarrosVC: UIViewController {
     }
     
     @IBAction func clicouSortearButton(_ sender: UIButton) {
-    
+               
         self.resultadoLabel.text = self.controller.sortearCarro()
+
+        self.performSegue(withIdentifier: "DetalheCarroVC", sender: nil)
+    }
     
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let vc: DetalheCarroVC? = segue.destination as? DetalheCarroVC
+        vc?.controller = self.controller
+        
     }
 
 }
@@ -47,7 +57,4 @@ extension ListaCarrosVC: UITableViewDelegate, UITableViewDataSource {
                
         return cell
     }
-    
-    
-    
 }

@@ -34,11 +34,26 @@ class ListaCarrosController {
         return arrayCarros[indexPath.row].cor ?? ""
     }
     
+    private var carroSorteado: Carro?
+    
+    var modeloCarroSorteado: String? {
+        return  self.carroSorteado?.modelo
+    }
+    
+    var anoCarroSorteado: String? {
+        return  "\(self.carroSorteado?.ano ?? 0)"
+    }
+    
+    var corCarroSorteado: String? {
+        return  self.carroSorteado?.cor
+    }
+    
     func sortearCarro() -> String {
-        
         
         if self.arrayCarros.count > 4 {
             let carro = self.arrayCarros.randomElement()
+            
+            self.carroSorteado = carro
             return "\(carro?.modelo ?? ""), \(carro?.ano ?? 0), \(carro?.cor ?? "") "
         }
         

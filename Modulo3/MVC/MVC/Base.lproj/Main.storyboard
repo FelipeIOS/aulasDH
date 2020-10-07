@@ -80,11 +80,43 @@
                     <connections>
                         <outlet property="myTableView" destination="fnw-OR-nFY" id="OlJ-yK-o5E"/>
                         <outlet property="resultadoLabel" destination="Wev-g3-uY8" id="lg5-bK-DfJ"/>
+                        <segue destination="8lv-t5-TMn" kind="presentation" identifier="DetalheCarroVC" id="KU8-Nc-NyU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-62.318840579710148" y="98.4375"/>
+        </scene>
+        <!--Detalhe CarroVC-->
+        <scene sceneID="zhy-fZ-bwA">
+            <objects>
+                <viewController id="8lv-t5-TMn" customClass="DetalheCarroVC" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Co-t1-B2H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c27-Nf-WLg">
+                                <rect key="frame" x="20" y="42" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Zak-Jk-0id"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c27-Nf-WLg" firstAttribute="top" secondItem="Zak-Jk-0id" secondAttribute="top" constant="42" id="5pg-wD-sSS"/>
+                            <constraint firstItem="c27-Nf-WLg" firstAttribute="leading" secondItem="Zak-Jk-0id" secondAttribute="leading" constant="20" id="Ddp-fd-L6h"/>
+                            <constraint firstItem="Zak-Jk-0id" firstAttribute="trailing" secondItem="c27-Nf-WLg" secondAttribute="trailing" constant="20" id="cyM-fg-MQv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultadoLabel" destination="c27-Nf-WLg" id="o09-DK-W9U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zru-NR-a8r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="663.768115942029" y="98.4375"/>
         </scene>
     </scenes>
     <resources>
